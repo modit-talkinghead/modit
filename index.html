@@ -42,17 +42,12 @@
           <h1 class="title is-1 publication-title">MoDiT: Learning Highly Consistent 3D Motion Coefficients with Diffusion Transformer for Talking Head Generation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              Yucheng Wang<sup>1</sup>, Dan Xu<sup>1</sup>
-            </span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>The Hong Kong University of Science and Technology</span>
-          </div>
-          <div class="is-size-5 publication-authors">
+              <a href="https://wangandyyucheng.github.io/">Yucheng Wang</a> and</span>
             <span class="author-block">
-              <a href="mailto:ywangls@connect.ust.hk">ywangls@connect.ust.hk</a>,
-              <a href="mailto:danxu@cse.ust.hk">danxu@cse.ust.hk</a>
-            </span>
+              <a href="https://www.danxurgb.net/">Dan Xu</a></span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">The Hong Kong University of Science and Technology</span>
           </div>
 
           <div class="publication-links">
@@ -60,6 +55,8 @@
             <span class="link-block">
               <a href="https://arxiv.org/abs/xxxx.xxxxx"
                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
                 </span>
                 <span>arXiv</span>
               </a>
@@ -68,8 +65,20 @@
             <span class="link-block">
               <a href="https://github.com/dummy/modit"
                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
                 </span>
                 <span>Code</span>
+              </a>
+            </span>
+            <!-- Video Link -->
+            <span class="link-block">
+              <a href="./static/videos/modit_demo.mp4"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-youtube"></i>
+                </span>
+                <span>Video</span>
               </a>
             </span>
           </div>
@@ -83,8 +92,8 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img src="./static/images/Teaser.png" alt="Teaser Image" style="width: 100%; height: auto;">
-      <h2 class="subtitle has-text-centered">
-        MoDiT produces consistent and realistic talking head animations from single image driven by audio.
+      <h2 class="subtitle has-text-centered" style="font-size: 1.5rem;">
+        MoDiT combines 3DMM with a Diffusion-based Transformer to generate realistic talking head animations from audio with single image.
       </h2>
     </div>
   </div>
@@ -100,11 +109,11 @@
           <p>
             Audio-driven talking head generation is critical for applications such as virtual assistants, video games, and films, where natural lip movements are essential. Despite progress in this field, challenges remain in producing both consistent and realistic facial animations. Existing methods, often based on GANs or UNet-based diffusion models, face three major limitations:
           </p>
-          <ul>
+          <ol>
             <li>Temporal jittering caused by weak temporal constraints, resulting in frame inconsistencies.</li>
             <li>Identity drift due to insufficient 3D information extraction, leading to poor preservation of facial identity.</li>
             <li>Unnatural blinking behavior due to inadequate modeling of realistic blink dynamics.</li>
-          </ul>
+          </ol>
           <p>
             To address these issues, we propose MoDiT, a novel framework that combines the 3D Morphable Model (3DMM) with a Diffusion-based Transformer. Our contributions include:
           </p>
@@ -116,9 +125,23 @@
         </div>
       </div>
     </div>
+    
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Overview of the Diffusion Transformer Pipeline</h2>
     <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <img src="./static/images/pipeline_image.jpg" alt="Pipeline Image" style="width: 100%; height: auto;">
+      <div class="column is-four-fifths has-text-centered">
+        <img src="./static/images/Pipeline.png" alt="Pipeline Image" style="width: 100%; height: auto;">
+      </div>
+      <div class="column is-four-fifths has-text-centered">
+        <p class="subtitle is-5">
+          Overview of the Diffusion Transformer Pipeline, showcasing the denoising stages with temporal and spatial condition injection. The integration of 3DMM coefficients to provide explicit spatial constraints, ensuring accurate 3D-informed optical flow prediction and improved lip synchronization. We also employ a hierarchical denoising strategy with revised temporal attention and biased self/cross-attention mechanisms, enabling the model to refine lip synchronization and progressively enhance full-face coherence, effectively mitigating temporal jittering.
+        </p>
       </div>
     </div>
   </div>
@@ -126,12 +149,14 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <h2 class="title is-3">Comparison</h2>
     <div class="columns is-centered">
-      <div class="column is-half">
-        <img src="./static/images/table_image1.jpg" alt="Table 1 Image" style="width: 100%; height: auto;">
+      <!-- notice that the images are not side by side, but one above the other. -->
+      <div class="column is-four-fifths has-text-centered">
+        <img src="./static/images/Compare.png" alt="Table 1 Image" style="width: 100%; height: auto;">
       </div>
-      <div class="column is-half">
-        <img src="./static/images/table_image2.jpg" alt="Table 2 Image" style="width: 100%; height: auto;">
+      <div class="column is-four-fifths has-text-centered">
+        <img src="./static/images/Table.png" alt="Table 2 Image" style="width: 100%; height: auto;">
       </div>
     </div>
   </div>
@@ -143,7 +168,7 @@
       <div class="column is-four-fifths has-text-centered">
         <h2 class="title is-3">Demo Video</h2>
         <video controls autoplay muted loop playsinline style="width: 100%; height: auto;">
-          <source src="./static/videos/demo_video.mp4" type="video/mp4">
+          <source src="./static/videos/Video Demo.mp4" type="video/mp4">
         </video>
       </div>
     </div>
