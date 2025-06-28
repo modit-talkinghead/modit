@@ -92,8 +92,8 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img src="./static/images/Teaser.png" alt="Teaser Image" style="width: 100%; height: auto;">
-      <h2 class="subtitle has-text-centered">
-        MoDiT combines 3DMM with a Diffusion-based Transformer to generate realistic talking head animations from audio with single image.
+      <h2 class="content has-text-centered">
+        MoDiT combines 3DMM with a Diffusion-based Transformer to generate realistic talking heads from audio with single image.
       </h2>
     </div>
   </div>
@@ -107,21 +107,21 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Audio-driven talking head generation is critical for applications such as virtual assistants, video games, and films, where natural lip movements are essential. Despite progress in this field, challenges remain in producing both consistent and realistic facial animations. Existing methods, often based on GANs or UNet-based diffusion models, face three major limitations:
+            Audio-driven talking head generation is critical for applications such as virtual assistants, video games, and films. Despite progress in this field, challenges remain in producing both consistent and realistic facial animations. Existing methods face three major limitations:
           </p>
-          <ol>
+          <ul>
             <li>Temporal jittering caused by weak temporal constraints, resulting in frame inconsistencies.</li>
-            <li>Identity drift due to insufficient 3D information extraction, leading to poor preservation of facial identity.</li>
+            <li>Identity drift due to insufficient 3D information, leading to poor facial identity preservation.</li>
             <li>Unnatural blinking behavior due to inadequate modeling of realistic blink dynamics.</li>
-          </ol>
+          </ul>
           <p>
             To address these issues, we propose MoDiT, a novel framework that combines the 3D Morphable Model (3DMM) with a Diffusion-based Transformer. Our contributions include:
           </p>
-          <ol>
+          <ul>
             <li>A hierarchical denoising strategy with revised temporal attention and biased self/cross-attention mechanisms, enabling the model to refine lip synchronization and progressively enhance full-face coherence, effectively mitigating temporal jittering.</li>
             <li>The integration of 3DMM coefficients to provide explicit spatial constraints, ensuring accurate 3D-informed optical flow prediction and improved lip synchronization using Wav2Lip results, thereby preserving identity consistency.</li>
             <li>A refined blinking strategy to model natural eye movements, with smoother and more realistic blinking behaviors.</li>
-          </ol>
+          </ul>
         </div>
       </div>
     </div>
@@ -129,22 +129,10 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths has-text-centered">
-        <h2 class="title is-3">Demo Video</h2>
-        <video controls autoplay muted loop playsinline style="width: 100%; height: auto;">
-          <source src="./static/videos/Video Demo.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Overview of the Diffusion Transformer Pipeline</h2>
+    <h2 class="title is-3 has-text-centered">Methods</h2>
     <div class="columns is-centered is-multiline">
       <!-- Larger Image -->
       <div class="column is-four-fifths has-text-centered">
@@ -152,8 +140,18 @@
       </div>
       <!-- Text styled like Abstract -->
       <div class="column is-four-fifths has-text-justified">
-        <p class="content is-size-5">
-          Overview of the Diffusion Transformer Pipeline, showcasing the denoising stages with temporal and spatial condition injection. The integration of 3DMM coefficients to provide explicit spatial constraints, ensuring accurate 3D-informed optical flow prediction and improved lip synchronization. We also employ a hierarchical denoising strategy with revised temporal attention and biased self/cross-attention mechanisms, enabling the model to refine lip synchronization and progressively enhance full-face coherence, effectively mitigating temporal jittering.
+        <p class="content has-text-centered">
+          Overview of the Diffusion Transformer Pipeline with temporal and spatial condition injection.
+        </p>
+      </div>
+      <!-- Larger Image -->
+      <div class="column is-four-fifths has-text-centered">
+        <img src="./static/images/Transformer.png" alt="Transformer Image" style="width: 100%; height: auto; max-width: 1200px;">
+      </div>
+      <!-- Text styled like Abstract -->
+      <div class="column is-four-fifths has-text-justified">
+        <p class="content has-text-centered">
+          Illustration of structure details of the Transformer Block.
         </p>
       </div>
     </div>
@@ -162,14 +160,47 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Comparison</h2>
+    <h2 class="title is-3 has-text-centered">Experiment</h2>
     <div class="columns is-centered is-multiline">
       <!-- Larger Comparison Images -->
       <div class="column is-four-fifths has-text-centered">
         <img src="./static/images/Compare.png" alt="Comparison Chart" style="width: 100%; height: auto; max-width: 1200px;">
       </div>
+      <!-- Text styled like Abstract -->
+      <div class="column is-four-fifths has-text-justified">
+        <p class="content has-text-centered">
+          Comparison with the state-of-the-art lip-syncing methods.
+        </p>
+      </div>
       <div class="column is-four-fifths has-text-centered">
         <img src="./static/images/Table.png" alt="Comparison Table" style="width: 100%; height: auto; max-width: 1200px;">
+      </div>
+      <!-- Text styled like Abstract -->
+      <div class="column is-four-fifths has-text-justified">
+        <p class="content has-text-centered">
+          Comparison with the state-of-the-art methods on HDTF and VFHQ dataset.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <video controls autoplay muted loop playsinline style="width: 100%; height: auto;">
+          <source src="./static/videos/1.mp4" type="video/mp4">
+        </video>
+        <video controls autoplay muted loop playsinline style="width: 100%; height: auto;">
+          <source src="./static/videos/2.mp4" type="video/mp4">
+        </video>
+        <video controls autoplay muted loop playsinline style="width: 100%; height: auto;">
+          <source src="./static/videos/3.mp4" type="video/mp4">
+        </video>
+        <video controls autoplay muted loop playsinline style="width: 100%; height: auto;">
+          <source src="./static/videos/4.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
