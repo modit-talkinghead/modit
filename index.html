@@ -15,8 +15,8 @@
       font-family: 'Google Sans', sans-serif;
     }
     .hero {
-      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-      color: white;
+      background: #ffffff; /* Plain white background */
+      color: #000000; /* Black text color */
     }
     .hero .title {
       font-size: 2.5rem;
@@ -36,12 +36,12 @@
       line-height: 1.8;
     }
     footer {
-      background: #2a2a2a;
-      color: #ccc;
+      background: #f7f7f7; /* Light gray background */
+      color: #333333; /* Dark gray text */
       padding: 1.5rem 0;
     }
     footer a {
-      color: #fff;
+      color: #333333;
       text-decoration: underline;
     }
     footer a:hover {
@@ -50,8 +50,7 @@
   </style>
 </head>
 <body>
-
-<!-- Navbar -->
+  <!-- Navbar -->
 <nav class="navbar is-transparent">
   <div class="navbar-brand">
     <a class="navbar-item" href="#">
@@ -86,14 +85,12 @@
 </section>
 
 <!-- Teaser Section -->
-<section class="hero teaser">
+<section class="section teaser">
   <div class="container">
-    <div class="hero-body">
-      <div class="columns is-centered">
-        <div class="column is-half has-text-centered">
-          <img src="./static/images/Teaser.png" alt="Teaser Image" style="width: 100%;">
-          <h2 class="subtitle is-4 mt-4">MoDiT combines 3DMM with a Diffusion-based Transformer to generate realistic talking head animations from audio with a single image.</h2>
-        </div>
+    <div class="columns is-centered">
+      <div class="column is-half has-text-centered">
+        <img src="./static/images/Teaser.png" alt="Teaser Image" style="width: 100%;">
+        <h2 class="subtitle is-4 mt-4">MoDiT combines 3DMM with a Diffusion-based Transformer to generate realistic talking head animations from audio with a single image.</h2>
       </div>
     </div>
   </div>
@@ -122,35 +119,50 @@
   </div>
 </section>
 
-<!-- Pipeline Section -->
 <section class="section">
-  <div class="container">
-    <h2 class="title is-3 has-text-centered">Overview of the Diffusion Transformer Pipeline</h2>
-    <div class="columns is-centered">
-      <div class="column is-half">
-        <img src="./static/images/Pipeline.png" alt="Pipeline Image" style="width: 100%;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Overview of the Diffusion Transformer Pipeline</h2>
+    <div class="columns is-centered is-multiline">
+      <div class="column is-four-fifths has-text-centered">
+        <img src="./static/images/Pipeline.png" alt="Pipeline Image" style="width: 100%; height: auto;">
       </div>
-      <div class="column is-half">
-        <p class="subtitle is-5">The pipeline showcases the denoising stages with temporal and spatial condition injection. It integrates 3DMM coefficients to provide explicit spatial constraints, ensuring accurate 3D-informed optical flow prediction and improved lip synchronization.</p>
+      <div class="column is-four-fifths has-text-centered">
+        <p class="subtitle is-5">
+          Overview of the Diffusion Transformer Pipeline, showcasing the denoising stages with temporal and spatial condition injection. The integration of 3DMM coefficients to provide explicit spatial constraints, ensuring accurate 3D-informed optical flow prediction and improved lip synchronization. We also employ a hierarchical denoising strategy with revised temporal attention and biased self/cross-attention mechanisms, enabling the model to refine lip synchronization and progressively enhance full-face coherence, effectively mitigating temporal jittering.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Comparison Section -->
 <section class="section">
-  <div class="container">
-    <h2 class="title is-3 has-text-centered">Comparison</h2>
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Comparison</h2>
     <div class="columns is-centered is-multiline">
-      <div class="column is-half">
-        <img src="./static/images/Compare.png" alt="Comparison Image" style="width: 100%;">
+      <!-- Images now stack on top of one another -->
+      <div class="column is-four-fifths has-text-centered">
+        <img src="./static/images/Compare.png" alt="Table 1 Image" style="width: 100%; height: auto;">
       </div>
-      <div class="column is-half">
-        <img src="./static/images/Table.png" alt="Table Image" style="width: 100%;">
+      <div class="column is-four-fifths has-text-centered">
+        <img src="./static/images/Table.png" alt="Table 2 Image" style="width: 100%; height: auto;">
       </div>
     </div>
   </div>
 </section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="title is-3">Demo Video</h2>
+        <video controls autoplay muted loop playsinline style="width: 100%; height: auto;">
+          <source src="./static/videos/Video Demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- Footer -->
 <footer class="footer">
